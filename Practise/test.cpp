@@ -1,7 +1,9 @@
-#include <iostream>
-#include <time.h>
+// #include <iostream>
+// #include <time.h>
+// #include <string>
+// #include <cstdio>
+// #include <cstdlib>
 
-using namespace std;
 
 //程序运行时间测试
 /*
@@ -27,12 +29,38 @@ int main()
 
 }
 */
-typedef long long LL;
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <cstdio>
+#include <string>
+using namespace std;
 int main()
 {
-	LL a;
-	cin>>a;
-	cout<<a;
+    string line;
+    while(getline(cin,line))
+    {
+      if(line.size() == 0)  continue;
+      string::size_type begin = 0,end = 0;
+      while(end != line.npos)
+      {
+        
+        end = line.find("/",begin);
+        if(end != line.npos)
+        {
+          cout<<"begin = "<<begin<<" end = "<<end<<"   ";
+          cout<<line.substr(begin,end - begin)<<endl;
+          // cout<<sub<<endl;
+          begin = end+1;
+        }
 
-	return 0;
+
+      }
+      cout<<line.substr(begin,line.size() - begin);
+
+    }
+
+    return 0;
 }

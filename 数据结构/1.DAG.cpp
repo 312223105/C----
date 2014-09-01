@@ -1,7 +1,14 @@
+/*
+
+在判断一个有向图是否为有向无环图时，可以通过判断一条边v->w存在，且w已经存在栈中，就找到了一个环。
+因为栈表示的是一条由w到v的有向路径，而v->w正好补全了这个环。
+
+*/
 #include <iostream>
 #include <vector>
 #include <queue>
 #include <time.h>
+
 
 using namespace std;
 
